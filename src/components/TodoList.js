@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
+import { useTodoState } from "../TodoContext";
 
 const TodoListBlock = styled.div`
   flex: 1; // 자신이 차지할 수 있는 모든 영역 차지
@@ -9,6 +10,8 @@ const TodoListBlock = styled.div`
 `;
 
 function TodoList() {
+  const state = useTodoState();
+  console.log(state);
   return (
     <TodoListBlock>
       <TodoItem text="프로젝트 생성하기" done={true} />
